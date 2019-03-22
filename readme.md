@@ -2,6 +2,8 @@
 
 Yet another function to **replace HTML `<br>` tags with [newline characters](https://en.wikipedia.org/wiki/Newline)**.
 
+*Note:* This package does *not* do [HTML sanitization](https://en.wikipedia.org/wiki/HTML_sanitization)! It merely replaces `<br>`.
+
 [![npm version](https://img.shields.io/npm/v/br2nl.svg)](https://www.npmjs.com/package/br2nl)
 [![build status](https://api.travis-ci.org/derhuerst/br2nl.svg?branch=master)](https://travis-ci.org/derhuerst/br2nl)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/br2nl.svg)
@@ -19,7 +21,13 @@ npm install @derhuerst/br2nl
 ## Usage
 
 ```js
-// todo
+const br2nl = require('@derhuerst/br2nl')
+
+console.log(br2nl('foo<br>bar'))
+console.log(br2nl('foo<br> bar'))
+console.log(br2nl('foo<br/>bar'))
+console.log(br2nl('foo<br />bar'))
+console.log(br2nl('foo<br a="b" />bar'))
 ```
 
 
